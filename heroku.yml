@@ -1,6 +1,3 @@
 build:
   docker:
-    release:
-      dockerfile: Dockerfile
-      target: api_builder
     web: Dockerfile
