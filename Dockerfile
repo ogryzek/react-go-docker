@@ -2,14 +2,13 @@ FROM node:10-jessie AS app_builder
 RUN echo "Starting in: $(pwd)"
 RUN echo "I am:  $( whoami )"
 RUN echo "files are : $( ls -a )"
-ADD ./app/ $HOME/app/
 
-WORKDIR $HOME/app
+ADD ./app/ /app
+WORKDIR /app
 
 RUN echo "Changed WORKDIR: $WORKDIR is it: $(pwd)"
 RUN echo "I am now:  $( whoami )"
 RUN echo "files here are are : $( ls -a )"
-
 
 RUN npm install
 RUN npm run build
