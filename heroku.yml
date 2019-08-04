@@ -1,7 +1,7 @@
 build:
   docker:
     web: Dockerfile
-    worker:
-      dockerfile: Dockerfile
+    worker: worker/Dockerfile
 release:
+  target: api_builder
   image: worker
