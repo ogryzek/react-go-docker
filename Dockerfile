@@ -3,7 +3,7 @@ RUN echo "Starting in: $(pwd)"
 RUN echo "I am:  $( whoami )"
 RUN echo "files are : $( ls -a )"
 
-ADD ./app/ /app
+ADD app/ /app
 WORKDIR /app
 
 RUN echo "Changed WORKDIR: $WORKDIR is it: $(pwd)"
