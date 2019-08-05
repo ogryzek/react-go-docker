@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"log"
 	"net/http"
+	"os"
 )
 
 func hello() http.Handler {
@@ -17,5 +18,10 @@ func main() {
 	mux.Handle("/hello", hello())
 	mux.Handle("/", http.FileServer(http.Dir("./static/")))
 
-	log.Fatal(http.ListenAndServe(":3000", mux))
+	port := os.Getenv("PORT")
+	if port == "" {
+		port = "3000"
+	}
+
+	log.Fatal(http.ListenAndServe(":"+port, mux))
 }
