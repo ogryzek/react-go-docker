@@ -6,5 +6,3 @@ build:
       target: builder
 release:
   image: worker
-  command:
-  - ./migrate.sh
